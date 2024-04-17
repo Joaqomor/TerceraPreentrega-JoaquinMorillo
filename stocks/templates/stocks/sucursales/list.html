@@ -31,9 +31,9 @@
                     <td>{{ sucursal.localidad }}</td>
                     <td>{{ sucursal.cantidad_de_empleados }}</td>
                     <td>
-                        <a href="{% url 'office-detail' sucursal.id %}" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="{% url 'office-update' sucursal.id %}" class="btn btn-primary btn-sm">Editar</a>
                         <a href="{% url 'office-delete' sucursal.id %}" class="btn btn-danger btn-sm">Eliminar</a>
-                        <a href="{% url 'office-detail' sucursal.id %}" class="btn btn-success btn-sm">Ver</a>
+                        <a href="{% url 'office-detail' sucursal.id %}" class="btn btn-success btn-sm">Ver detalle</a>
                     </td>
                 </tr>
                 {% endfor %}

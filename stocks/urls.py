@@ -2,11 +2,11 @@ from django.urls import path
 
 from .views import (
     home_view,
-    detail_view,
-    list_view,
-    search_view,
-    search_with_form_view,
-    create_with_form_view,
+    detail_product_view,
+    list_product_view,
+    search_product_view,
+    search_product_with_form_view,
+    create_product_with_form_view,
     create_client_with_form_view,
     detail_client_view,
     client_list_view,
@@ -18,20 +18,21 @@ from .views import (
     detail_office_view,
     search_office_view,
     office_delete_view,
-    delete_view,
+    delete_product_view,
+    office_update_view,
+    update_product_view,
     
     
 )
 
 urlpatterns = [
-    path("", home_view),
-    path("detail/<producto_id>", detail_view),
-    path("list/", list_view, name="product-list"),
-    path("buscar/<nombre_de_usuario>", search_view),
-    path("buscar-con-formulario/", search_with_form_view, name="zzz"),
-    path("crear-producto-con-formulario/", create_with_form_view, name="product-create"),
-    path("product/detail/<producto_id>", detail_view, name="product-detail"),
-    path("product/delete/<producto_id>", delete_view, name="product-delete"),
+    path("", home_view, name="home"),
+    path("list/", list_product_view, name="product-list"),
+    path("buscar-con-formulario/", search_product_with_form_view, name="product-search"),
+    path("crear-producto-con-formulario/", create_product_with_form_view, name="product-create"),
+    path("producto/detail/<producto_id>", detail_product_view, name="product-detail"),
+    path("producto/delete/<producto_id>", delete_product_view, name="product-delete"),
+    path("producto/update/<producto_id>", update_product_view, name="product-update"),
     path("cliente/create/", create_client_with_form_view, name="client-create"),
     path("cliente/detail/<cliente_id>", detail_client_view, name="client-detail"),
     path("cliente/list/", client_list_view, name="client-list"),
@@ -43,5 +44,6 @@ urlpatterns = [
     path("sucursal/detail/<sucursal_id>", detail_office_view, name="office-detail"),
     path("sucursal/buscar/", search_office_view, name="office-search"),
     path("sucursal/delete/<sucursal_id>", office_delete_view, name="office-delete"),
+    path("sucursal/update/<sucursal_id>", office_update_view, name="office-update"),
 
 ]

@@ -1,22 +1,22 @@
 {% extends 'stocks/base.html' %}
 
-{% block title %}Buscar Producto{% endblock %}
+{% block title %}Modificar Producto{% endblock %}
 
 {% block content %}
 <section class="py-5">
     <div class="container">
-        <h2 class="mb-4">Buscar Producto</h2>
+        <h2 class="mb-4">Modificar datos del Producto</h2>
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="card shadow-sm">
                     <div class="card-header">
-                        Filtros de búsqueda
+                        Datos del producto
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{% url 'zzz' %}">  
+                        <form method="POST" action="{% url 'product-update' OBJETO.id %}">  
                             {% csrf_token %}  <!-- CSRF Token added here -->
-                            {{ search_form.as_p }}  
-                            <button type="buscar" class="btn btn-primary">Buscar</button>
+                            {{ form_update.as_p }}  
+                            <button type="buscar" class="btn btn-primary">Actualizar</button>
                         </form>
                     </div>
                 </div>
